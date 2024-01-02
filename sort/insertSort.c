@@ -3,14 +3,15 @@
 #include <stdio.h>
 
 
-/* 定位第一个数为然后将其取出 其他数与他进行判断  */
+/* 定位第一个数为然后将其取出 其他数与其进行判断  */
 int insertSort(int *array, int lenght)
 {   
     int num = 0;
     for (int pos = 1; pos < lenght; pos++)
         {
             num = array[pos];
-            for (int idx = pos; idx >= 0; idx--)
+            int idx = 0;
+            for (idx = pos; idx > 0; idx--)
             {
                 if (array[idx - 1] > num)
                 {
@@ -22,6 +23,7 @@ int insertSort(int *array, int lenght)
                     break;
                 }
             }
+            array[idx] = num;
         }
 }
 
